@@ -14,6 +14,9 @@ class CreateTwipsTable extends Migration
     {
         Schema::create('twips', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->text('twip');
+            $table->string('published_by');
             $table->timestamps();
         });
     }
