@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', "MainController@welcome");
+Route::get('/', 'MainController@welcome');
+Route::get('twips', 'TwipsController@cast');
