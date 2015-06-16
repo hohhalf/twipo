@@ -12,7 +12,7 @@ class MainController extends Controller
 {
     public function welcome()
     {
-        $twips = Twip::all();
+        $twips = Twip::latest()->get();
         return view("welcome", compact('twips'));
     }
 }

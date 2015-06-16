@@ -12,4 +12,9 @@
 */
 
 Route::get('/', 'MainController@welcome');
-Route::get('twips', 'TwipsController@cast');
+
+Route::get('/create', 'TwipsController@create');
+
+Route::get('/{id}', 'TwipsController@single_twip');
+
+Route::post('/create', 'TwipsController@store');
