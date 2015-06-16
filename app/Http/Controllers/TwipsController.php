@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Twip;
-//use Illuminate\Http\Request;
-//use App\Http\Requests;
+use App\Http\Requests;
+use App\Http\Requests\CreateTwipRequest;
 use App\Http\Controllers\Controller;
-use Request;
+
+
 
 class TwipsController extends Controller
 {
@@ -19,9 +20,8 @@ class TwipsController extends Controller
         return view('create');
     }
 
-    public function store(){
-        $input=Request::all();
-        Twip::create($input);
+    public function store(CreateTwipRequest $request){
+        Twip::create($request->all());
         return redirect('/');
     }
 }
