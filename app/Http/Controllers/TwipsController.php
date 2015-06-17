@@ -24,4 +24,21 @@ class TwipsController extends Controller
         Twip::create($request->all());
         return redirect('/');
     }
+
+    public function welcome()
+    {
+        $twips = Twip::latest()->get();
+        return view("welcome", compact('twips'));
+    }
+
+    public function edit($id){
+        $twip = Twip::findOrFail($id);
+        return view('edit', compact('twip'));
+    }
+
+    public function update($id, CreateTwipRequest $request){
+        $twip = Twip::findOrFail($id);
+        $twip->update($request->all());
+        return redirect($id);
+    }
 }

@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', 'MainController@welcome');
+Route::get('/', 'TwipsController@welcome');
 
 Route::get('/create', 'TwipsController@create');
 
 Route::get('/{id}', 'TwipsController@single_twip');
 
 Route::post('/create', 'TwipsController@store');
+
+Route::get('/{id}/edit', 'TwipsController@edit');
+
+Route::patch('/{id}/edit', 'TwipsController@update');
